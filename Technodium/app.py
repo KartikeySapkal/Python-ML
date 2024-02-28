@@ -6,7 +6,7 @@ import pygame
 app = Flask(__name__)
 
 # Load the trained model
-with open('model1.pkl', 'rb') as file:
+with open('GRE_PRED/GRE_Deploy/model1.pkl', 'rb') as file:
     model = pickle.load(file)
 
 # Initialize Pygame mixer
@@ -52,6 +52,9 @@ def predict():
     if university_rating == 5:
         prediction += 0.1
 
+
+
+
     # Play music if prediction exceeds 0.78
     if prediction > 0.8:
         pygame.mixer.music.load('/Users/kartikeysapkal/Downloads/TpVxP9AC-Chipi-Chipi-Chapa-Chapa-Original-Song.mp3')
@@ -60,6 +63,8 @@ def predict():
     if prediction < 0.8:
         pygame.mixer.music.load('/Users/kartikeysapkal/Downloads/tf_nemesis.mp3')
         pygame.mixer.music.play(-1)
+
+    print(type(prediction))
 
 
     # Return the predicted chance of admission
