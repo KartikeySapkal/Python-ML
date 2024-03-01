@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Classification</title>
+
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Spam Classification</h2>
+        <form action="/predict" method="post">
+            <label for="message">Enter your message:</label><br>
+            <textarea id="message" name="message" required></textarea><br>
+            <input type="submit" value="Classify">
+        </form>
+    </div>
+</body>
+</html>

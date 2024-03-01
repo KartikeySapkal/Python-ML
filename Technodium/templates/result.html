@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admission Prediction Result</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='result.css') }}">
 </head>
 <body>
     <div class="container mt-5">
         <h2>Admission Prediction Result</h2>
         <div class="alert alert-success" role="alert">
-            <strong>Predicted Chance of Admission:</strong> {{ prediction }}
+            <strong>Percent Chance of Admission:</strong> {{ prediction*100 }}
         </div>
-        <a href="/" class="btn btn-primary">Back to Prediction</a>
-    </div>
+        <a href="/predict" class="btn btn-primary">Back to Prediction</a>
 </body>
 </html>
